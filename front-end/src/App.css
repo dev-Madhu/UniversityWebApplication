@@ -1,0 +1,91 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-image: linear-gradient(180deg, #5b1dc4,#C66FBC);
+}
+
+.auth-form-container, .login-form, .register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+  .auth-form-container {
+    padding: 5rem;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 0.5rem;
+  }
+}
+
+label {
+  text-align: left;
+  padding: 0.25rem 0;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.button_primary {
+  border: none;
+  background-color: blue;
+  padding: 20px;
+  border-radius: 10px;
+  font-size:15px;
+  font-weight:600;
+  cursor: pointer;
+  color: white;
+}
+
+.link-btn {
+  border: none;
+  background: none;
+  margin: 10px;
+  font-size: 1rem;
+  color: rgb(202, 7, 7);
+  text-decoration: underline;
+}
+
+.head{
+  text-align: center;
+  font-size: 30px;
+}
+.profile-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:20px;
+}
+
+.not-found-img {
+  width: 150px;
+  height:150px;
+  border-radius: 20px;
+}
+.not-found-heading {
+  font-size: 20px;
+  font-weight: 600;
+  color:blue;
+}
+.description {
+  font-size: 20px;
+  color:blue;
+}
+.main-dashboard{
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color:white;
+  height:150vh;
+}

@@ -1,0 +1,40 @@
+.univList {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  position: relative;
+  top: 8rem;
+}
+
+.univCard {
+  background-color: antiquewhite;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 5%;
+  color: black;
+}
+
+.univCard > div {
+  margin: 5px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  background-color: moccasin;
+}
+.card h2 {
+  font-size: 1.5rem;
+  color: #8a2b06;
+}
+.card p {
+  font-size: 1.5rem;
+  color: #641e03;
+  line-height: 0.5rem;
+}
