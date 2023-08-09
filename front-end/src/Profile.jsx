@@ -9,7 +9,6 @@ export const Profile = () => {
   const navigate = useNavigate();
 
   const { username, email, password } = userDetails;
-  console.log(isLoggedIn);
 
   return isLoggedIn ? (
     <Card>

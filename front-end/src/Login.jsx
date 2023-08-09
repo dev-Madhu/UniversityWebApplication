@@ -9,6 +9,10 @@ export const Login = () => {
     email: '',
     password: ''
   });
+  const [inputErr, setInputErr] = useState({
+    email: false,
+    password: false
+  });
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -18,22 +22,27 @@ export const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:8082/api/v1/users/authenticate', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
+    console.log(data);
+    if (data.email !== '' && data.password !== '') {
+      const response = await fetch('http://localhost:8082/api/v1/users/authenticate', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      const result = await response.json();
+      const flag = result.error ? true : false;
+      if (!flag) {
+        dispatch(setLogIn(!flag));
+        dispatch(setUserData(result));
+        navigate('/profile');
+      } else {
+        navigate('/not-found');
       }
-    });
-    const result = await response.json();
-    const flag = result.error  ? true : false;
-    console.log(result);
-    if (!flag) {
-      dispatch(setLogIn(!flag));
-      dispatch(setUserData(result));
-      navigate('/profile');
     } else {
-      navigate('/not-found');
+      if (data.email === '') setInputErr({ ...inputErr, email: true });
+      if (data.password === '') setInputErr({ ...inputErr, password: true });
     }
   };
 
@@ -50,6 +59,7 @@ export const Login = () => {
           id='email'
           name='email'
         />
+        {inputErr.email && <p className='error_txt'>Email is required</p>}
         <label htmlFor='password'>password</label>
         <input
           value={data.password}
@@ -59,6 +69,7 @@ export const Login = () => {
           id='password'
           name='password'
         />
+        {inputErr.password && <p className='error_txt'>Password is required</p>}
         <button type='submit' className='button_primary'>
           Log In
         </button>

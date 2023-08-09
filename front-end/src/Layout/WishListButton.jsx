@@ -15,30 +15,9 @@ export const CartIcon = () => {
 };
 
 export const WishListButton = (props) => {
-  // const [btnHighlight, setBtnHighlight] = useState(false);
   const cartState = useSelector((state) => state.cart);
-  console.log(cartState)
 
   let numberOfCartItems = cartState.wishList.length ?? 0;
-
-  // const numberOfCartItems = items.reduce((curNumber, item) => {
-  //   return curNumber + item.amount;
-  // }, 0);
-
-  // const btnClasses = `${classes.button} ${btnHighlight ? classes.bump : ""}`;
-
-  // useEffect(() => {
-  //   if (items.length === 0) return;
-  //   setBtnHighlight(true);
-
-  //   const timer = setTimeout(() => {
-  //     setBtnHighlight(false);
-  //   }, 300);
-
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, [items]);//
 
   return (
     <button className={classes.button} onClick={props.onClick}>

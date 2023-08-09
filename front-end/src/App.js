@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import './App.css';
 import { Login } from './Login';
 import { Register } from './Register';
 import { Profile } from './Profile';
@@ -10,14 +9,9 @@ import { Universities } from './Universities/Universities';
 import { Header } from './Layout/Header';
 import { NotFound } from './Layout/NotFound';
 import { store } from './store/store';
+import './App.css';
 
 function App() {
-  // const [currentForm, setCurrentForm] = useState('login');
-
-  // const toggleForm = (formName) => {
-  //   setCurrentForm(formName);
-  // }
-
   return (
     <Provider store={store}>
       <BrowserRouter>

@@ -15,7 +15,6 @@ export const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(userData);
     const url = 'http://localhost:8082/api/v1/users';
     try {
       const response = await fetch(url, {
@@ -29,7 +28,7 @@ export const Register = () => {
         navigate('/');
       }
     } catch (error) {
-      console.log(error);
+      throw error;
     }
     setUserData({ username: '', email: '', password: '' });
   };
@@ -46,6 +45,7 @@ export const Register = () => {
           id='name'
           placeholder='full Name'
         />
+        {userData.username === '' && <p className='error_txt'>UserName is required</p>}
         <label htmlFor='email'>email</label>
         <input
           value={userData.email}
@@ -55,6 +55,8 @@ export const Register = () => {
           id='email'
           name='email'
         />
+        {userData.email === '' && <p className='error_txt'>Email is required</p>}
+
         <label htmlFor='password'>password</label>
         <input
           value={userData.password}
@@ -64,6 +66,8 @@ export const Register = () => {
           id='password'
           name='password'
         />
+        {userData.password === '' && <p className='error_txt'>Password is required</p>}
+
         <button type='submit' className='button_primary'>
           Register
         </button>

@@ -9,7 +9,6 @@ export const ProfileDashboard = () => {
       const fulldata = await fetch("http://localhost:8082/api/v1/users/all");
       const response = await fulldata.json();
       setUserDetails(response);
-      console.log(response);
     };
     fetchdetails();
   }, []);

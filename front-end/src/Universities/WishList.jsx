@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Card } from '../Layout/Card';
 import { Button } from '../Layout/Button';
-import styles from './Universities.module.css';
 import { removeUniversity } from '../store/dataSlice';
+import styles from './Universities.module.css';
 
 export const WishList = () => {
   const navigate = useNavigate();
